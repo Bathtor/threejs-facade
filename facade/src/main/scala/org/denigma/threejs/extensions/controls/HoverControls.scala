@@ -191,6 +191,10 @@ class HoverControls(camera: Camera, element: Element, val center: Vector3 = new 
   def onMouseUp(event: MouseEvent): Unit = if (enabled && userRotate) {
     state = HoverState.Calm
   }
+  
+  def onDoubleClick(event: MouseEvent): Unit = {
+      
+  }
 
   def attach(el: Element) = {
 
@@ -200,6 +204,7 @@ class HoverControls(camera: Camera, element: Element, val center: Vector3 = new 
     el.addEventListener("mousewheel", (this.onMouseWheel _).asInstanceOf[Function[Event, _]])
     el.addEventListener("DOMMouseScroll", (this.onMouseWheel _).asInstanceOf[Function[Event, _]], false) // firefox
     el.addEventListener("contextmenu", (this.onContextMenu _).asInstanceOf[Function[Event, _]], false)
+    el.addEventListener("dblclick", (this.onDoubleClick _).asInstanceOf[Function[Event, _]], false)
 
   }
 

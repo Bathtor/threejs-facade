@@ -17,3 +17,12 @@ project/plugins/project/
 .worksheet
 
 .idea
+
+/bin/
+.project
+.settings
+.classpath
+
+# OS X
+
+.DS_Store
