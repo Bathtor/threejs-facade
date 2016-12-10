@@ -1792,7 +1792,7 @@ class Quaternion extends js.Object {
     def setFromEuler(euler: Euler, update: Boolean = js.native): Quaternion = js.native
     def setFromAxisAngle(axis: Vector3, angle: Double): Quaternion = js.native
     def setFromRotationMatrix(m: Matrix4): Quaternion = js.native
-    def setFromUnitVectors(vFrom: Vector3, vTo: Vector4): Quaternion = js.native
+    def setFromUnitVectors(vFrom: Vector3, vTo: Vector3): Quaternion = js.native
     def inverse(): Quaternion = js.native
     def conjugate(): Quaternion = js.native
     def dot(v: Vector3): Double = js.native
@@ -3094,6 +3094,20 @@ class CircleGeometry extends Geometry {
     var parameters: js.Any = js.native
     var radius: Double = js.native
     var segments: Double = js.native
+    var thetaStart: Double = js.native
+    var thetaLength: Double = js.native
+}
+
+@js.native
+@JSName("THREE.ConeGeometry")
+class ConeGeometry extends Geometry {
+    def this(radius: Double = js.native, height: Double = js.native, radialSegments: Double = js.native, heightSegments: Double = js.native, openEnded: Boolean = js.native, thetaStart: Double = js.native, thetaLength: Double = js.native) = this()
+    var parameters: js.Any = js.native
+    var radius: Double = js.native
+    var height: Double = js.native
+    var radialSegments: Double = js.native
+    var heightSegments: Double = js.native
+    var openEnded: Boolean = js.native
     var thetaStart: Double = js.native
     var thetaLength: Double = js.native
 }
